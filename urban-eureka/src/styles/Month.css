@@ -1,0 +1,43 @@
+.month {
+  display: grid;
+  flex: 1 1 0%;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.cell {
+  border-width: 1px;
+  border-color: gray;
+  display: flex;
+  flex-direction: column;
+}
+.cell header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cell header p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+.main-current-day{
+    width: 1.75rem;
+    padding: .25rem;
+}
+.task-container{
+    flex: 1 1 0%;
+    cursor: pointer;
+}
+.task{
+    color: rgb(60, 64, 67);
+    font-size: .875rem;
+    line-height: 1.25rem;
+    padding: .25rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: .25rem;
+    margin-right: .75rem;
+}

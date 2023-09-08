@@ -1,0 +1,84 @@
+.create-event {
+  border-width: 1px;
+  padding: 0.5rem;
+  border-radius: 48px;
+  display: flex;
+  align-items: center;
+  transition: border 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, 0.3),
+    0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+  background-color: rgba(255, 255, 255, 0.502);
+  color: #222;
+}
+.create-event span {
+  padding-left: 1.75rem;
+  padding-right: 0.75rem;
+}
+.mini-calendar {
+  margin-top: 2.25rem;
+}
+.mini-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.mini-month {
+  color: rgb(60, 64, 67);
+  font-weight: 700;
+}
+.mini-calendar-grid {
+  display: grid;
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.mini-calendar-days {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  text-align: center;
+  padding: 0.25rem 0;
+}
+.mini-calendar-dates {
+  padding: 0.25rem 0;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.current-day {
+  color: white;
+  background-color: rgb(59, 130, 246);
+  border-radius: 9999px;
+}
+.selected-day {
+  background-color: rgb(219, 234, 254);
+  border-radius: 9999px;
+  color: rgb(37, 99, 235);
+  font-weight: 700;
+}
+.label {
+  color: rgb(60, 64, 67);
+  font-weight: 700;
+  margin-top: 2.5rem;
+}
+.label-items {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.label-items input[type="checkbox"]:checked {
+  cursor: pointer;
+}
+.label-checkbox {
+  height: 1.25rem;
+  width: 1.25rem;
+  border-radius: 0.25rem;
+  color: white;
+  background-color: white;
+}
+.label-title {
+  text-transform: capitalize;
+  margin-left: 0.5rem;
+  color: rgb(55, 65, 81);
+}
