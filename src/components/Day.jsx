@@ -27,7 +27,7 @@ export default function Day({ day, rowIdx }) {
     <div className="cell">
       <header>
         {rowIdx === 0 && <p>{day.format("ddd").toUpperCase()}</p>}
-        <p className={`${getCurrentDayClass()}`}>{day.format("DD")}</p>
+        <p className={`${getCurrentDayClass()}`}>{day.format("D")}</p>
       </header>
       <div
         className="task-container"

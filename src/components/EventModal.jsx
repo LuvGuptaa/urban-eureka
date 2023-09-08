@@ -42,7 +42,11 @@ export default function EventModal() {
     setShowEventModal(false);
   }
   return (
-    <div className="event">
+    <div className="event" onClick={(e) => {
+      if (e.target === e.currentTarget) {
+        setShowEventModal(false)
+      }
+    }}>
       <form>
         <header>
           <img src={drag} alt="" style={{ height: "20px", width: "20px", cursor: 'grab' }} />

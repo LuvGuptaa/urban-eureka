@@ -3,10 +3,10 @@
   flex: 1 1 0%;
   grid-template-rows: repeat(5, minmax(0, 1fr));
   grid-template-columns: repeat(7, minmax(0, 1fr));
+  border: 1px solid #f1f1f3;
 }
 .cell {
-  border-width: 1px;
-  border-color: gray;
+  border: 1px solid #f1f1f3;
   display: flex;
   flex-direction: column;
 }
@@ -21,23 +21,23 @@
   margin-top: 0.25rem;
   text-align: center;
 }
-.main-current-day{
-    width: 1.75rem;
-    padding: .25rem;
+.main-current-day {
+  width: 1.75rem;
+  padding: 0.25rem;
 }
-.task-container{
-    flex: 1 1 0%;
-    cursor: pointer;
+.task-container {
+  flex: 1 1 0%;
+  cursor: pointer;
 }
-.task{
-    color: rgb(60, 64, 67);
-    font-size: .875rem;
-    line-height: 1.25rem;
-    padding: .25rem;
-    border-radius: .25rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-bottom: .25rem;
-    margin-right: .75rem;
+.task {
+  color: rgb(60, 64, 67);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0.25rem;
+  margin-right: 0.75rem;
 }
