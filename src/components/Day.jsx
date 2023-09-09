@@ -9,14 +9,22 @@ export default function Day({ day, rowIdx }) {
     setShowEventModal,
     filteredEvents,
     setSelectedEvent,
+    holidays,
   } = useContext(GlobalContext);
 
   useEffect(() => {
-    const events = filteredEvents.filter(
+    const filteredDayEvents = filteredEvents.filter(
       (evt) => dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY")
     );
-    setDayEvents(events);
-  }, [filteredEvents, day]);
+
+    const holidayEvents = holidays.filter(
+      (evt) => dayjs(evt.day).format("DD-MM-YY") === day.format("DD-MM-YY")
+    );
+
+    const allDayEvents = [...filteredDayEvents, ...holidayEvents];
+
+    setDayEvents(allDayEvents);
+  }, [filteredEvents, holidays, day]);
 
   function getCurrentDayClass() {
     return day.format("DD-MM-YY") === dayjs().format("DD-MM-YY")
@@ -24,28 +32,30 @@ export default function Day({ day, rowIdx }) {
       : "";
   }
   return (
-    <div className="cell">
-      <header>
-        {rowIdx === 0 && <p>{day.format("ddd").toUpperCase()}</p>}
-        <p className={`${getCurrentDayClass()}`}>{day.format("D")}</p>
-      </header>
-      <div
-        className="task-container"
-        onClick={() => {
-          setDaySelected(day);
-          setShowEventModal(true);
-        }}
-      >
-        {dayEvents.map((evt, idx) => (
-          <div
-            key={idx}
-            onClick={() => setSelectedEvent(evt)}
-            className={`bg-${evt.label} task`}
-          >
-            {evt.title}
-          </div>
-        ))}
+    <>
+      <div className="cell">
+        <header>
+          {rowIdx === 0 && <p>{day.format("ddd").toUpperCase()}</p>}
+          <p className={`${getCurrentDayClass()}`}>{day.format("D")}</p>
+        </header>
+        <div
+          className="task-container"
+          onClick={() => {
+            setDaySelected(day);
+            setShowEventModal(true);
+          }}
+        >
+          {dayEvents.map((evt, idx) => (
+            <div
+              key={idx}
+              onClick={() => setSelectedEvent(evt)}
+              className={`bg-${evt.label} task`}
+            >
+              {evt.title}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

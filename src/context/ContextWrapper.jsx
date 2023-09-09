@@ -39,6 +39,7 @@ import React, {
       [],
       initEvents
     );
+    const [holidays, setHolidays] = useState([]);
   
     const filteredEvents = useMemo(() => {
       return savedEvents.filter((evt) =>
@@ -106,6 +107,8 @@ import React, {
           labels,
           updateLabel,
           filteredEvents,
+          holidays,
+          setHolidays,
         }}
       >
         {props.children}

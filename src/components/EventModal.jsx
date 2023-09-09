@@ -8,7 +8,7 @@ import time from "../assets/time.png";
 import text from "../assets/text.png";
 import bookmark from "../assets/bookmark.png";
 import tick from "../assets/tick.png";
-const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple"];
+const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple", "holidays"];
 
 export default function EventModal() {
   const { setShowEventModal, daySelected, dispatchCalEvent, selectedEvent } =
@@ -95,7 +95,7 @@ export default function EventModal() {
               placeholder="Add a description"
               value={description}
               required
-              className="event-title"
+              className="event-description"
               onChange={(e) => setDescription(e.target.value)}
             />
             <img

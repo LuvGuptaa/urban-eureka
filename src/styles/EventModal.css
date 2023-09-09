@@ -43,6 +43,16 @@
   border-bottom: 2px solid rgb(229,231,235);
   width: 100%;
 }
+.event-description{
+  color: rgba(75, 85, 99);
+  font-weight: 600;
+  font-size: .75rem;
+  line-height: 1.25rem;
+  padding-bottom: .5rem;
+  padding-top: .75rem;
+  border-bottom: 2px solid rgb(229,231,235);
+  width: 100%;
+}
 form input[type="text"]{
     appearance: none;
 }

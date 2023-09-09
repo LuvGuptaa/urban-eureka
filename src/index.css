@@ -18,22 +18,25 @@ img {
   width: 100%;
 }
 .bg-indigo {
-  background-color: rgb(199, 210, 254);
+  background-color: rgb(129,140,248);
 }
 .bg-gray {
-  background-color: rgb(229, 231, 235);
+  background-color: rgb(156,163,175);
 }
 .bg-green {
-  background-color: rgb(167, 243, 208);
+  background-color: rgb(52,211,153);
 }
 .bg-blue {
-  background-color: rgb(191, 219, 254);
+  background-color: rgb(96,165,250);
 }
 .bg-red {
-  background-color: rgb(254, 202, 202);
+  background-color: rgb(248,113,113);
 }
 .bg-purple {
-  background-color: rgb(221, 214, 254);
+  background-color: rgb(167,139,250);
+}
+.bg-holidays{
+  background-color: #fbbc04;
 }
 .accent-indigo {
   accent-color: rgb(129,140,248);
@@ -52,4 +55,7 @@ img {
 }
 .accent-purple {
   accent-color: rgb(167,139,250);
+}
+.accent-holidays{
+  accent-color: #fbbc04;
 }
