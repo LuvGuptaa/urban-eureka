@@ -9,7 +9,7 @@ import EventModal from "./components/EventModal";
 import HolidayEvent from "./HolidayEvent";
 
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
+import { getFirestore } from 'firebase/firestore/lite';
 
 function App() {
   const firebaseConfig = {
@@ -22,7 +22,9 @@ function App() {
     measurementId: "G-Y2DQX1P6CW",
   };
   const app = initializeApp(firebaseConfig);
-  // const db = getFirestore(app);
+  const db = getFirestore(app);
+
+  // console.log(db);
 
   const [currenMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex, showEventModal } = useContext(GlobalContext);
