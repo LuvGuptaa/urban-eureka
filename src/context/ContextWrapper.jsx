@@ -23,7 +23,9 @@ import React, {
   }
   function initEvents() {
     const storageEvents = localStorage.getItem("savedEvents");
-    const parsedEvents = storageEvents ? JSON.parse(storageEvents) : [];
+    const holidayEvents = localStorage.getItem("holidays");
+    const allEvents = [...storageEvents, ...holidayEvents];
+    const parsedEvents = storageEvents ? JSON.parse(storageEvents) : [];  /// Look into this
     return parsedEvents;
   }
   
@@ -53,6 +55,10 @@ import React, {
     useEffect(() => {
       localStorage.setItem("savedEvents", JSON.stringify(savedEvents));
     }, [savedEvents]);
+
+    useEffect(() => {
+      localStorage.setItem("holidays", JSON.stringify(holidays))
+    }, [holidays])
   
     useEffect(() => {
       setLabels((prevLabels) => {

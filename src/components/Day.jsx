@@ -11,6 +11,7 @@ export default function Day({ day, rowIdx }) {
     setSelectedEvent,
     holidays,
   } = useContext(GlobalContext);
+  
 
   useEffect(() => {
     const filteredDayEvents = filteredEvents.filter(
