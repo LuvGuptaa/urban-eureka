@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar";
 import Month from "./components/Month";
 import GlobalContext from "./context/GlobalContext";
 import EventModal from "./components/EventModal";
-import Holidays from "./holidays";
+import Holidays from "./Holidays";
 function App() {
   const [currenMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex, showEventModal } = useContext(GlobalContext);
