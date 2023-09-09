@@ -23,7 +23,6 @@ import React, {
   }
   function initEvents() {
     const storageEvents = localStorage.getItem("savedEvents");
-    const allEvents = [...storageEvents, ...holidayEvents];
     const parsedEvents = storageEvents ? JSON.parse(storageEvents) : [];  /// Look into this
     return parsedEvents;
   }
