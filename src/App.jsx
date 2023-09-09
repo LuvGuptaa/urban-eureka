@@ -22,7 +22,7 @@ function App() {
     measurementId: "G-Y2DQX1P6CW",
   };
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+  // const db = getFirestore(app);
 
   const [currenMonth, setCurrentMonth] = useState(getMonth());
   const { monthIndex, showEventModal } = useContext(GlobalContext);
