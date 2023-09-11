@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import GlobalContext from "../context/GlobalContext";
 import "../styles/EventModal.css";
 import drag from "../assets/drag.png";
@@ -8,9 +8,20 @@ import time from "../assets/time.png";
 import text from "../assets/text.png";
 import bookmark from "../assets/bookmark.png";
 import tick from "../assets/tick.png";
-const labelsClasses = ["indigo", "gray", "green", "blue", "red", "purple", "holidays"];
+import JoditEditor from "jodit-react";
+
+const labelsClasses = [
+  "indigo",
+  "gray",
+  "green",
+  "blue",
+  "red",
+  "purple",
+  "holidays",
+];
 
 export default function EventModal() {
+  const editor = useRef(null);
   const { setShowEventModal, daySelected, dispatchCalEvent, selectedEvent } =
     useContext(GlobalContext);
 
@@ -42,14 +53,21 @@ export default function EventModal() {
     setShowEventModal(false);
   }
   return (
-    <div className="event" onClick={(e) => {
-      if (e.target === e.currentTarget) {
-        setShowEventModal(false)
-      }
-    }}>
+    <div
+      className="event"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          setShowEventModal(false);
+        }
+      }}
+    >
       <form>
         <header>
-          <img src={drag} alt="" style={{ height: "20px", width: "20px", cursor: 'grab' }} />
+          <img
+            src={drag}
+            alt=""
+            style={{ height: "20px", width: "20px", cursor: "grab" }}
+          />
           <div>
             {selectedEvent && (
               <img
@@ -62,7 +80,12 @@ export default function EventModal() {
                 }}
                 src={deleteBtn}
                 alt=""
-                style={{ height: "20px", width: "20px", marginRight: '.5rem', cursor: 'pointer' }}
+                style={{
+                  height: "20px",
+                  width: "20px",
+                  marginRight: ".5rem",
+                  cursor: "pointer",
+                }}
               />
             )}
             <button onClick={() => setShowEventModal(false)}>
@@ -89,7 +112,7 @@ export default function EventModal() {
             <img src={time} alt="" style={{ height: "20px", width: "20px" }} />
             <p>{daySelected.format("dddd, MMMM DD")}</p>
             <img src={text} alt="" style={{ height: "20px", width: "20px" }} />
-            <input
+            {/* <input
               type="text"
               name="description"
               placeholder="Add a description"
@@ -97,6 +120,11 @@ export default function EventModal() {
               required
               className="event-description"
               onChange={(e) => setDescription(e.target.value)}
+            /> */}
+            <JoditEditor
+              ref={editor}
+              value={description}
+              onChange={(e) => setDescription(e)}
             />
             <img
               src={bookmark}

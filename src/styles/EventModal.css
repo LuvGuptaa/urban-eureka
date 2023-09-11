@@ -15,7 +15,8 @@
   border-radius: 0.5rem;
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
     0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
-  width: 25%;
+  width: 50%;
+  height: 75%;
 }
 .event header {
   background-color: rgb(243, 244, 246);
@@ -30,7 +31,7 @@
 .event-container {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  align-items: flex-end;
+  align-items: flex-start;
   row-gap: 1.75rem;
 }
 .event-title {
@@ -43,7 +44,7 @@
   border-bottom: 2px solid rgb(229,231,235);
   width: 100%;
 }
-.event-description{
+/* .event-description{
   color: rgba(75, 85, 99);
   font-weight: 600;
   font-size: .75rem;
@@ -52,7 +53,7 @@
   padding-top: .75rem;
   border-bottom: 2px solid rgb(229,231,235);
   width: 100%;
-}
+} */
 form input[type="text"]{
     appearance: none;
 }
