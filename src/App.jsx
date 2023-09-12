@@ -45,7 +45,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [showSignIn, setShowSignIn] = useState(true);
   const [loading, setLoading] = useState(false);
-  console.log(showSignIn);
+  // console.log(showSignIn);
   const auth = getAuth();
 
   const [currenMonth, setCurrentMonth] = useState(getMonth());
@@ -77,7 +77,7 @@ function App() {
       const user = result.user;
       setUser(user);
       setShowSignIn(false);
-      console.log("User signed in:", user);
+      // console.log("User signed in:", user);
     } catch (error) {
       console.error("Google sign-in error:", error);
       setLoading(false)

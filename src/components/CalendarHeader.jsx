@@ -27,7 +27,7 @@ export default function CalendarHeader({ db, user, handleSignOut }) {
   const handleSubmit = async (e) => {
     const tasksRef = ref(db, "tasks"+ user.uid );
     e.preventDefault();
-    console.log(tasks);
+    // console.log(tasks);
 
     try {
       await set(tasksRef, tasks);

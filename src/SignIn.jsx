@@ -8,7 +8,7 @@ const SignIn = ({ handleSignIn, loading }) => {
       <button onClick={handleSignIn}>Sign In</button>
       {loading && (
         <div className="loading">
-          <div class="lds-ellipsis">
+          <div className="lds-ellipsis">
             <div></div>
             <div></div>
             <div></div>
