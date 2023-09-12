@@ -44,6 +44,7 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [showSignIn, setShowSignIn] = useState(true);
+  const [loading, setLoading] = useState(false);
   console.log(showSignIn);
   const auth = getAuth();
 
@@ -71,6 +72,7 @@ function App() {
     e.preventDefault();
 
     try {
+      setLoading(true);
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
       setUser(user);
@@ -78,6 +80,9 @@ function App() {
       console.log("User signed in:", user);
     } catch (error) {
       console.error("Google sign-in error:", error);
+      setLoading(false)
+    } finally {
+      setLoading(false)
     }
   };
 
@@ -95,7 +100,7 @@ function App() {
 
   return (
     <React.Fragment>
-      {showSignIn && <SignIn handleSignIn={handleSignIn} />}
+      {showSignIn && <SignIn handleSignIn={handleSignIn} loading={loading}/>}
       <HolidayEvent />
       {showEventModal && <EventModal />}
 
