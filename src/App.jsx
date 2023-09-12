@@ -81,6 +81,18 @@ function App() {
     }
   };
 
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        setUser(null);
+        setShowSignIn(true);
+        localStorage.removeItem("savedEvents");
+      })
+      .catch((error) => {
+        console.error('Sign-out error:', error);
+      });
+  };
+
   return (
     <React.Fragment>
       {showSignIn && <SignIn handleSignIn={handleSignIn} />}
@@ -89,7 +101,7 @@ function App() {
 
       {!showSignIn && (
         <div className="App">
-          <CalendarHeader db={db} user={user} />
+          <CalendarHeader db={db} user={user} handleSignOut={handleSignOut} />
           <div className="container">
             <Sidebar />
             <Month month={currenMonth} user={user} />

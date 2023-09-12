@@ -41,7 +41,8 @@ button {
 }
 .header-right button {
   background-color: rgb(59, 130, 246);
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 1.25rem;
   color: white;
   border-radius: 0.25rem;
+  margin-right: .5rem;
 }

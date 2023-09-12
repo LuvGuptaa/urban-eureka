@@ -8,7 +8,7 @@ import right from "../assets/right.svg";
 // import { collection, addDoc } from "firebase/firestore";
 import { ref, set } from "firebase/database";
 
-export default function CalendarHeader({ db, user }) {
+export default function CalendarHeader({ db, user, handleSignOut }) {
   const { monthIndex, setMonthIndex } = useContext(GlobalContext);
   const tasks = JSON.parse(localStorage.getItem("savedEvents"));
   function handlePrevMonth() {
@@ -58,6 +58,9 @@ export default function CalendarHeader({ db, user }) {
       <div className="header-right">
         <button type="submit" onClick={handleSubmit}>
           Save on Cloud
+        </button>
+        <button type="submit" onClick={handleSignOut}>
+          Sign Out
         </button>
       </div>
     </header>
